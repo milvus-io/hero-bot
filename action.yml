@@ -1,4 +1,4 @@
-name: 'hero-bot'
+name: 'hero-bot-action'
 description: 'extract heros (contributor) from repo'
 inputs:
   token:  
