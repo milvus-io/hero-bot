@@ -26,6 +26,6 @@ extract heros (contributor) from given repos and add hero avator icon in your ma
 
 Contributors add to end of file in default.
 
-To customize position, add '<br><!-- Do not remove start of hero-bot --><br><br><!-- Do not remove end of hero-bot --><br>' anywhere you want. And contributors will be insert inside of if.
+To customize position, add ```<br><!-- Do not remove start of hero-bot --><br><br><!-- Do not remove end of hero-bot --><br>``` anywhere you want. And contributors will be insert inside of if.
 
 
