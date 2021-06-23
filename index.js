@@ -10,7 +10,7 @@ async function run() {
         // required inputs
         const token = core.getInput('token');
         const repos = core.getInput('repos').split(",");
-        const targetRepo = core.getInput('targetRepo');
+        const target = core.getInput('targetRepo');
 
         // optional inputs
         const orderKey = core.getInput('orderKey') || 'login';
@@ -20,7 +20,7 @@ async function run() {
         const width = core.getInput('width') || '40px';
         const showTotal = core.getInput('showTotal') || true;
 
-        const [targetOwner, targetRepo] = targetRepo.split("/");
+        const [targetOwner, targetRepo] = target.split("/");
         if (!targetOwner || !targetRepo) {
             throw new Error(`error target repo path set ${targetRepo}`);
         }
