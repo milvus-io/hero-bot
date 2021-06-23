@@ -40,11 +40,6 @@ const updateFile = async ({ token, contributors, filePath, width, showTotal, tar
         },
         message: `update ${filePath}`,
     });
-    if (updated) {
-        console.log(`${filePath} update with`, data.commit.html_url);
-    } else {
-        throw new Error(`update file ${filePath} error`);
-    }
 }
 
 module.exports = {
