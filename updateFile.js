@@ -10,35 +10,39 @@ const updateFile = async ({ token, contributors, filePath, width, showTotal, tar
     const MyOctokit = Octokit.plugin(createOrUpdateTextFile);
     const octokit = new MyOctokit({ auth: token });
 
-    const { updated, data } = await octokit.createOrUpdateTextFile({
+    await octokit.createOrUpdateTextFile({
         owner: targetOwner,
         repo: targetRepo,
         path: filePath,
         content: ({ exists, content }) => {
-            if (!exists) return null;
+            if (!exists) throw new Error(`${filePath} not found in repo ${targetOwner}/${targetRepo}`);;
             let contributerIcons = contributors.map(element => {
-                return `<a href="${element.html_url}"><img src="${element.avatar_url}" class="avatar-user" width="${width}" /></a>`
+                return `<a href="${element.html_url}"><img src="${element.avatar_url}" width="${width}" /></a>\n`
             })
-
             let returnContent = "";
-            returnContent = returnContent.concat(startPlaceHolder);
+            returnContent = `${returnContent}${startPlaceHolder}\n`
 
             if (showTotal) {
-                returnContent = returnContent.concat(`<img src="https://img.shields.io/badge/Total-${contributerIcons.length}-orange"><br>`);
+                returnContent = `${returnContent}<img src="https://img.shields.io/badge/all--contributors-${contributerIcons.length}-orange"><br>\n`;
             }
-            returnContent = returnContent.concat(contributerIcons.join('')).concat(endPlaceHolder);
+            returnContent = `${returnContent}${contributerIcons.join('')}${endPlaceHolder}`;
+
             const startOffset = content.indexOf(startPlaceHolder);
             const endOffset = content.indexOf(endPlaceHolder);
-            if (startOffset == -1) {
+            if (startOffset === -1 && endOffset === -1) {
                 // add contributor
                 return `${content}${returnContent}`;
             } else {
                 // update contributor
+                if (content.indexOf(returnContent) !== -1) {
+                    console.log("contributors not changed, won't update file");
+                    return content;
+                }
                 const replacement = content.slice(startOffset, endOffset + endPlaceHolder.length);
                 return content.replace(replacement, returnContent);
             }
         },
-        message: `update ${filePath}`,
+        message: `update contributor in ${filePath}`,
     });
 }
 

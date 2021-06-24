@@ -5,11 +5,10 @@ const { updateFile } = require('./updateFile');
 
 async function run() {
     try {
-        // const nameToGreet = core.getInput('who-to-greet');
 
         // required inputs
         const token = core.getInput('token');
-        const repos = core.getInput('repos').split(",");
+        const sourcesRepos = core.getInput('repos').split(";");
         const target = core.getInput('targetRepo');
 
         // optional inputs
@@ -19,6 +18,16 @@ async function run() {
         const filePath = core.getInput('filePath') || 'README.md';
         const width = core.getInput('width') || '40px';
         const showTotal = core.getInput('showTotal') || true;
+
+        const repos = sourcesRepos.reduce((acc, cur) => {
+            const owner = cur.split("/")[0];
+            const repos = cur.split("/")[1] && cur.split("/")[1].split(",");
+
+            if (!owner || !Array.isArray(repos)) {
+                throw new Error(`error target repo path set for ${owner}`);
+            }
+            return acc.concat(repos.map(repo => `${owner}/${repo}`));
+        }, []);
 
         const [targetOwner, targetRepo] = target.split("/");
         if (!targetOwner || !targetRepo) {
@@ -74,10 +83,6 @@ async function run() {
         console.log(`orderd by ${orderKey}, ${isAscend ? 'ascend' : 'descend'}`);
 
         await updateFile({ token, contributors, filePath, width, showTotal, targetOwner, targetRepo });
-
-        // Get the JSON webhook payload for the event that triggered the workflow
-        const payload = JSON.stringify(github.context.payload, undefined, 2)
-        console.log(`The event payload: ${payload}`);
     } catch (error) {
         core.setFailed(error.message);
     }
