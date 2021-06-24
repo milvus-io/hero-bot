@@ -32,8 +32,8 @@ anywhere you want. And contributors will be insert inside of if.
 
 ## Reference
 
-Use @actions/github to fetch contributor
-Use @octokit/plugin-create-or-update-text-file to update file
+Use @actions/github to fetch contributor  
+Use @octokit/plugin-create-or-update-text-file to update file  
 Use https://shields.io to generate badge
 
 
