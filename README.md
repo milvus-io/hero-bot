@@ -1,17 +1,19 @@
 # hero-bot
 extract heros (contributor) from given repos and add hero avator icon in your markdown
 
-## usage
+## Usage
 
-### required inputs
+Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/workflows/all-contributors.yaml) yml for using hero-bot 
+
+### Required inputs
 
 | key | description | example value |
 |  ---- | ---- | ---- |
 | token | Personal access tokens for access your repo, better stored in secret | `ghp_xxxx` |
-| repos  | repos need to collection contributor, `/` to seperate repos, `;` to seperate orges | `'milvus-io/milvus,www.milvus.io;facebook/react,ax'` |
+| repos  | repos need to collection contributor, `/` to seperate repos, `;` to seperate orges | `'milvus-io/milvus,milvus.io;facebook/react,ax'` |
 | targetRepo  | repo to add collection contributor | `'milvus-io/milvus'` |
 
-### optional inputs
+### Optional inputs
 
 | key | description | default value | available value |
 |  ---- | ---- | ---- | ---- |
@@ -22,7 +24,7 @@ extract heros (contributor) from given repos and add hero avator icon in your ma
 | width | width of contributor avator icon | `'40px'` | proper value for avator icon |
 | showTotal | show total number badge | `true` | `true` or `false` |
 
-### customize position
+### Customize position
 
 Contributors add to end of file in default.
 
@@ -32,8 +34,8 @@ anywhere you want. And contributors will be insert inside of if.
 
 ## Reference
 
-Use @actions/github to fetch contributor  
-Use @octokit/plugin-create-or-update-text-file to update file  
+Use [@actions/github](https://github.com/actions/github) to fetch contributor  
+Use [@octokit/plugin-create-or-update-text-file](https://github.com/octokit/plugin-create-or-update-text-file.js) to update file  
 Use https://shields.io to generate badge
 
 
