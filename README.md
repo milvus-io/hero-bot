@@ -10,7 +10,7 @@ Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/wor
 | key | description | example value |
 |  ---- | ---- | ---- |
 | token | Personal access tokens for access your repo, better stored in secret | `ghp_xxxx` |
-| repos  | repos need to collection contributor, `/` to seperate repos, `;` to seperate orges | `'milvus-io/milvus,milvus.io;facebook/react,ax'` |
+| repos  | repos need to collection contributor, `/`to divide org and repo, `,` to seperate different repos in same org, `;` to seperate different orges | `'milvus-io/milvus,milvus.io;facebook/react,ax'` |
 | targetRepo  | repo to add collection contributor | `'milvus-io/milvus'` |
 
 ### Optional inputs
