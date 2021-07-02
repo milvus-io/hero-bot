@@ -1,16 +1,16 @@
 name: 'hero-bot-action'
-description: 'extract heros (contributor) from repo'
+description: 'extract heros (contributor) from repos'
 inputs:
   token:  
-    description: 'Personal access tokens for access your repo'
+    description: 'Personal access tokens for access your repos'
     required: true
   repos:  
-    description: 'repos need to collection contributor'
+    description: 'repos need to collection contributors'
     required: true
-  targetRepo:  
-    description: 'repo to add collection contributor'
+  target:  
+    description: 'target path to add collected contributors'
     required: true
-    default: 'milvus-io/milvus'
+    default: 'milvus-io/milvus/README.md'
   orderKey:  
     description: 'contributor is ordered by this key'
     required: false
@@ -23,10 +23,6 @@ inputs:
     description: 'filter out user type'
     required: false
     default: 'Bot'
-  filePath:  
-    description: 'path of file to add contributors'
-    required: false
-    default: 'README.md'
   width:  
     description: 'width of contributor avator icon'
     required: false
@@ -35,9 +31,12 @@ inputs:
     description: 'show total number badge'
     required: false
     default: true
+  customUserConfig: 
+    description: 'a json config file for adding custom user list'
+    required: false
+    default: null
 
 runs:
   using: 'node12'
   main: 'index.js'
-
 

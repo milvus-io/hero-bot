@@ -10,19 +10,20 @@ Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/wor
 | key | description | example value |
 |  ---- | ---- | ---- |
 | token | Personal access tokens for access your repo, better stored in secret | `ghp_xxxx` |
-| repos  | repos need to collection contributor, `/`to divide org and repo, `,` to seperate different repos in same org, `;` to seperate different orges | `milvus-io/milvus,milvus.io;facebook/react,ax` |
-| targetRepo  | repo to add collection contributor | `milvus-io/milvus` |
+| repos  | repos need to collection contributor, multiline input, `/`to divide org and repo, `,` to seperate different repos in same org, | `-milvus-io/milvus,milvus.io  -facebook/react,ax` |
+| target  | target path to add collection contributor | `milvus-io/milvus/README.md` |
 
 ### Optional inputs
 
 | key | description | default value | available value |
 |  ---- | ---- | ---- | ---- |
-| orderKey | contributor is ordered by this key | `login` | `login` or `contributions` |
+| orderKey | contributor is ordered by this key, will always be `login` if customUserConfig is set| `login` | `login` or `contributions` |
 | isAscend | ascend or descend | `true` | `true` or `false` |
 | userTypeBlackList | filter out user type | `Bot` | `''`,`Bot`,`User` or `Bot,User` |
 | filePath | path of file to add contributors | `README.md` | any file path exists in repo |
 | width | width of contributor avator icon | `40px` | proper value for avator icon |
 | showTotal | show total number badge | `true` | `true` or `false` |
+| customUserConfig | custom user list config file path | `null` | config `avatar_url`, `html_url` and `login`  in an array |
 
 ### Customize position
 
@@ -34,8 +35,6 @@ anywhere you want. And contributors will be insert inside of if.
 
 ## Reference
 
-Use [@actions/github](https://github.com/actions/github) to fetch contributor  
+Use [@actions/github](https://github.com/actions/toolkit/tree/main/packages/github) to fetch contributor  
 Use [@octokit/plugin-create-or-update-text-file](https://github.com/octokit/plugin-create-or-update-text-file.js) to update file  
 Use https://shields.io to generate badge
-
-
