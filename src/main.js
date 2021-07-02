@@ -31,8 +31,11 @@ const mainTread = async (option) => {
     // order by orderKey
     orderArray(contributors, rumtimeOrderKey, isAscend);
 
-    core.info(`${contributors.length} contributors from ${repos.toString()} in total filtered out by ${userTypeBlackList.toString()}`);
-    core.info(`orderd by ${orderKey}, ${isAscend ? 'ascend' : 'descend'}`);
+    core.info(`${contributors.length} contributors from ${repos.toString()} in total`);
+    if (userTypeBlackList.length && userTypeBlackList[0]) {
+      core.info(`filtered out by ${userTypeBlackList.toString()}`);
+    }
+    core.info(`orderd by ${rumtimeOrderKey}, ${isAscend ? 'ascend' : 'descend'}`);
 
     Object.assign(option, {
       contributors,

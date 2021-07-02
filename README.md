@@ -10,7 +10,7 @@ Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/wor
 | key | description | example value |
 |  ---- | ---- | ---- |
 | token | Personal access tokens for access your repo, better stored in secret | `ghp_xxxx` |
-| repos  | repos need to collection contributor, multiline input, `/`to divide org and repo, `,` to seperate different repos in same org, | `-milvus-io/milvus,milvus.io  -facebook/react,ax` |
+| repos  | repos need to collection contributor, `/`to divide org and repo, `,` to seperate different repos in same org, `;` to seperate different orgs | `milvus-io/milvus,milvus.io;acebook/react,ax` |
 | target  | target path to add collection contributor | `milvus-io/milvus/README.md` |
 
 ### Optional inputs
@@ -18,12 +18,11 @@ Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/wor
 | key | description | default value | available value |
 |  ---- | ---- | ---- | ---- |
 | orderKey | contributor is ordered by this key, will always be `login` if customUserConfig is set| `login` | `login` or `contributions` |
-| isAscend | ascend or descend | `true` | `true` or `false` |
+| isAscend | ascend or descend | `True` | `True` or `False` |
 | userTypeBlackList | filter out user type | `Bot` | `''`,`Bot`,`User` or `Bot,User` |
-| filePath | path of file to add contributors | `README.md` | any file path exists in repo |
 | width | width of contributor avator icon | `40px` | proper value for avator icon |
-| showTotal | show total number badge | `true` | `true` or `false` |
-| customUserConfig | custom user list config file path | `null` | config `avatar_url`, `html_url` and `login`  in an array |
+| showTotal | show total number badge | `True` | `True` or `False` |
+| customUserConfig | custom user list config file path | `""` | config `avatar_url`, `html_url` and `login`  in an array |
 
 ### Customize position
 

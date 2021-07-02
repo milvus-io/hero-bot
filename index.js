@@ -5,17 +5,18 @@ async function run() {
   const option = {
     // required inputs
     token: core.getInput('token', { required: true }),
-    sourcesRepos: core.getMultilineInput('repos', { required: true }),
+    sourcesRepos: core.getInput('repos', { required: true }).split(';'),
     target: core.getInput('target', { required: true }),
 
     // optional inputs
-    orderKey: core.getInput('orderKey') || 'login',
+    orderKey: core.getInput('orderKey'),
     isAscend: core.getBooleanInput('isAscend'),
-    userTypeBlackList: (core.getInput('userTypeBlackList') || 'Bot').split(","),
-    width: core.getInput('width') || '40px',
-    showTotal: core.getInput('showTotal') || true,
+    userTypeBlackList: core.getInput('userTypeBlackList').split(","),
+    width: core.getInput('width'),
+    showTotal: core.getBooleanInput('showTotal'),
     customUserConfig: core.getInput('customUserConfig'),
   }
   mainTread(option);
 }
 run();
+

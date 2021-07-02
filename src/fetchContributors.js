@@ -33,7 +33,7 @@ const fetchContributors = async (token, repos, userTypeBlackList) => {
     core.info(`got ${total.length} contributors from ${repos[i]}`);
 
     // filter out blacklist type user
-    if (userTypeBlackList.length) {
+    if (userTypeBlackList.length && userTypeBlackList[0]) {
       total = total.filter(element => !userTypeBlackList.includes(element.type))
     }
     // remove duplicate by id
