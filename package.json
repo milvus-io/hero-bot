@@ -16,7 +16,6 @@
   "bugs": {
     "url": "https://github.com/milvus-io/hero-bot/issues"
   },
-  "type": "module",
   "homepage": "https://github.com/milvus-io/hero-bot#readme",
   "dependencies": {
     "@actions/core": "^1.4.0",
