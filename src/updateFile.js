@@ -1,8 +1,8 @@
-import core from '@actions/core';
-import { Octokit } from "@octokit/core";
-import {
+const core = require('@actions/core');
+const { Octokit } = require('@octokit/core');
+const {
   createOrUpdateTextFile,
-} from "@octokit/plugin-create-or-update-text-file";
+} = require('@octokit/plugin-create-or-update-text-file');
 
 const startPlaceHolder = '<br><!-- Do not remove start of hero-bot --><br>';
 const endPlaceHolder = '<br><!-- Do not remove end of hero-bot --><br>';
@@ -53,4 +53,6 @@ const updateFile = async ({ token, contributors, width, showTotal, target }) => 
   });
 }
 
-export default updateFile;
+module.exports = {
+  updateFile,
+}

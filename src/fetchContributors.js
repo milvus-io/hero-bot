@@ -1,7 +1,7 @@
-import core from '@actions/core';
-import github from '@actions/github';
+const core = require('@actions/core');
+const github = require('@actions/github');
 
-export const fetchContributors = async (token, repos, userTypeBlackList) => {
+const fetchContributors = async (token, repos, userTypeBlackList) => {
   const octokit = github.getOctokit(token);
   const contributors = [];
   for (let i = 0; i < repos.length; i++) {
@@ -47,7 +47,7 @@ export const fetchContributors = async (token, repos, userTypeBlackList) => {
   return contributors;
 }
 
-export const fetchCustomUser = async (token, customUserConfig) => {
+const fetchCustomUser = async (token, customUserConfig) => {
   const octokit = github.getOctokit(token);
   const [owner, repo, ...rest] = customUserConfig.split('/');
   const path = rest.join('/');
@@ -75,4 +75,9 @@ export const fetchCustomUser = async (token, customUserConfig) => {
     throw new Error(`Network error while fetching ${customUserConfig} Status:${status}`);
   }
   return [];
+}
+
+module.exports = {
+  fetchContributors,
+  fetchCustomUser
 }

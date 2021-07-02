@@ -1,5 +1,5 @@
-import core from '@actions/core';
-import mainTread from './src/main.js';
+const core = require('@actions/core');
+const { mainTread } = require('./src/main.js');
 
 async function run() {
   const option = {

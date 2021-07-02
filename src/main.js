@@ -1,8 +1,8 @@
-import core from '@actions/core';
+const core = require('@actions/core');
 
-import { orderArray, getRepoFromSourceRepo } from './util.js';
-import { fetchContributors, fetchCustomUser } from './fetchContributors.js';
-import updateFile from './updateFile.js';
+const { orderArray, getRepoFromSourceRepo } = require('./util.js');
+const { fetchContributors, fetchCustomUser } = require('./fetchContributors.js');
+const { updateFile } = require('./updateFile.js');
 
 const mainTread = async (option) => {
   try {
@@ -44,4 +44,6 @@ const mainTread = async (option) => {
   }
 }
 
-export default mainTread;
+module.exports = {
+  mainTread,
+}

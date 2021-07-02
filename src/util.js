@@ -1,4 +1,4 @@
-export const orderArray = (arr, key, isAscend) => {
+const orderArray = (arr, key, isAscend) => {
   if (isAscend === undefined) {
     isAscend = true;
   }
@@ -19,7 +19,7 @@ export const orderArray = (arr, key, isAscend) => {
   })
 }
 
-export const getRepoFromSourceRepo = (sourcesRepos) => {
+const getRepoFromSourceRepo = (sourcesRepos) => {
   return sourcesRepos.reduce((acc, cur) => {
     const owner = cur.split("/")[0];
     const repos = cur.split("/")[1] && cur.split("/")[1].split(",");
@@ -29,4 +29,9 @@ export const getRepoFromSourceRepo = (sourcesRepos) => {
     }
     return acc.concat(repos.map(repo => `${owner}/${repo}`));
   }, []);
+}
+
+module.exports = {
+  orderArray,
+  getRepoFromSourceRepo,
 }
