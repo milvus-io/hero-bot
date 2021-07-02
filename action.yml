@@ -37,6 +37,6 @@ inputs:
     default: null
 
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: 'node14'
+  main: 'dist/index.js'
 
