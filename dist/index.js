@@ -6564,6 +6564,35 @@ module.exports = require("zlib");;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__nccwpck_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__nccwpck_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__nccwpck_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -6587,6 +6616,7 @@ __nccwpck_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
 var core = __nccwpck_require__(846);
+var core_default = /*#__PURE__*/__nccwpck_require__.n(core);
 ;// CONCATENATED MODULE: ./src/util.js
 const orderArray = (arr, key, isAscend) => {
   if (isAscend === undefined) {
@@ -6623,12 +6653,13 @@ const getRepoFromSourceRepo = (sourcesRepos) => {
 
 // EXTERNAL MODULE: ./node_modules/@actions/github/lib/github.js
 var github = __nccwpck_require__(509);
+var github_default = /*#__PURE__*/__nccwpck_require__.n(github);
 ;// CONCATENATED MODULE: ./src/fetchContributors.js
 
 
 
 const fetchContributors = async (token, repos, userTypeBlackList) => {
-  const octokit = github.getOctokit(token);
+  const octokit = github_default().getOctokit(token);
   const contributors = [];
   for (let i = 0; i < repos.length; i++) {
     const [owner, repo] = repos[i].split("/");
@@ -6656,7 +6687,7 @@ const fetchContributors = async (token, repos, userTypeBlackList) => {
       return totalCons;
     }
     let total = await getTotalContributor();
-    core.info(`got ${total.length} contributors from ${repos[i]}`);
+    core_default().info(`got ${total.length} contributors from ${repos[i]}`);
 
     // filter out blacklist type user
     if (userTypeBlackList.length) {
@@ -6674,7 +6705,7 @@ const fetchContributors = async (token, repos, userTypeBlackList) => {
 }
 
 const fetchCustomUser = async (token, customUserConfig) => {
-  const octokit = github.getOctokit(token);
+  const octokit = github_default().getOctokit(token);
   const [owner, repo, ...rest] = customUserConfig.split('/');
   const path = rest.join('/');
 
@@ -6694,7 +6725,7 @@ const fetchCustomUser = async (token, customUserConfig) => {
     const buff = Buffer.from(content, 'base64');
     const text = buff.toString('utf8');
     const users = JSON.parse(text);
-    core.info(`got ${users.length} users from ${customUserConfig}`)
+    core_default().info(`got ${users.length} users from ${customUserConfig}`)
     return users;
   }
   if (status !== 200) {
@@ -6750,7 +6781,7 @@ const updateFile = async ({ token, contributors, width, showTotal, target }) => 
       } else {
         // update contributor
         if (content.indexOf(returnContent) !== -1) {
-          core.info("contributors not changed, won't update file");
+          core_default().info("contributors not changed, won't update file");
           return content;
         }
         const replacement = content.slice(startOffset, endOffset + endPlaceHolder.length);
@@ -6796,16 +6827,16 @@ const mainTread = async (option) => {
     // order by orderKey
     orderArray(contributors, rumtimeOrderKey, isAscend);
 
-    core.info(`${contributors.length} contributors from ${repos.toString()} in total filtered out by ${userTypeBlackList.toString()}`);
-    core.info(`orderd by ${orderKey}, ${isAscend ? 'ascend' : 'descend'}`);
+    core_default().info(`${contributors.length} contributors from ${repos.toString()} in total filtered out by ${userTypeBlackList.toString()}`);
+    core_default().info(`orderd by ${orderKey}, ${isAscend ? 'ascend' : 'descend'}`);
 
     Object.assign(option, {
       contributors,
     });
     await src_updateFile(option);
-    core.info(`${contributors.length} contributors added into file ${target}`)
+    core_default().info(`${contributors.length} contributors added into file ${target}`)
   } catch (error) {
-    core.setFailed(error.message);
+    core_default().setFailed(error.message);
   }
 }
 
@@ -6817,17 +6848,17 @@ const mainTread = async (option) => {
 async function run() {
   const option = {
     // required inputs
-    token: core.getInput('token', { required: true }),
-    sourcesRepos: core.getMultilineInput('repos', { required: true }),
-    target: core.getInput('target', { required: true }),
+    token: core_default().getInput('token', { required: true }),
+    sourcesRepos: core_default().getMultilineInput('repos', { required: true }),
+    target: core_default().getInput('target', { required: true }),
 
     // optional inputs
-    orderKey: core.getInput('orderKey') || 'login',
-    isAscend: core.getBooleanInput('isAscend'),
-    userTypeBlackList: (core.getInput('userTypeBlackList') || 'Bot').split(","),
-    width: core.getInput('width') || '40px',
-    showTotal: core.getInput('showTotal') || true,
-    customUserConfig: core.getInput('customUserConfig'),
+    orderKey: core_default().getInput('orderKey') || 'login',
+    isAscend: core_default().getBooleanInput('isAscend'),
+    userTypeBlackList: (core_default().getInput('userTypeBlackList') || 'Bot').split(","),
+    width: core_default().getInput('width') || '40px',
+    showTotal: core_default().getInput('showTotal') || true,
+    customUserConfig: core_default().getInput('customUserConfig'),
   }
   main(option);
 }
