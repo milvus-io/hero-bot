@@ -9,7 +9,7 @@ Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/wor
 
 | key | description | example value |
 |  ---- | ---- | ---- |
-| token | Personal access tokens for access your repo, better stored in secret | `ghp_xxxx` |
+| token | Personal access tokens with public_repo access ![image](https://user-images.githubusercontent.com/83750738/126748573-1de4a912-bf1a-4c2c-88ff-3032dce70f6a.png)  better stored in secret | `ghp_xxxx` |
 | repos  | repos need to collection contributor, `/`to divide org and repo, `,` to seperate different repos in same org, `;` to seperate different orgs | `milvus-io/milvus,milvus.io;facebook/react,ax` |
 | target  | target path to add collection contributor | `milvus-io/milvus/README.md` |
 
