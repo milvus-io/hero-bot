@@ -7,8 +7,11 @@ inputs:
   repos:
     description: "repos need to collection contributors"
     required: true
-  target:
+  targetRepo:
     description: "target repo to add collected contributors"
+    required: true
+  targetReponame: 
+    description: "target repo name to add collected contributors"
     required: true
   targetFile:
     description: "target file to add collected contributors"
@@ -38,15 +41,42 @@ inputs:
     required: false
     default: ""
 
+# runs:
+#   using: "composite"
+#   steps: 
+#     - name: check out code
+#       uses: actions/checkout@v2
+#       with: 
+#         token: ${{ inputs.token }}
+#         repository: ${{ inputs.target }}
+#     - name: update file if necessary
+#       using: 'node12'
+#       main: dist/index.js'
+#     - name: commit 
+#       run: |
+#         if git diff --exit-code; then
+#           git add -u
+#           git commit -s -m 'update contributors'
+#           git push
+#         fi
+
 runs:
-  using: "composite"
-  steps: 
-    - name: check out code
-      uses: actions/checkout@v2
-      with: 
-        token: ${{ inputs.token }}
-        repository: ${{ inputs.target }}
-    - name: update file if necessary
-      using: 'node12'
-      main: dist/index.js'
-    -
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.repos }}
+    - ${{ inputs.targetRepo }}
+    - ${{ inputs.targetReponame }}
+    - ${{ inputs.targetFile }}
+    - ${{ inputs.orderKey }}
+    - ${{ inputs.isAscend }}
+    - ${{ inputs.userTypeBlackList }}
+    - ${{ inputs.width }}
+    - ${{ inputs.showTotal }}
+    - ${{ inputs.customUserConfig }}
+    
+    
+
+
+        

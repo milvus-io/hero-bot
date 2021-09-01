@@ -9,8 +9,6 @@ const mainTread = async (option) => {
     const {
       token,
       sourcesRepos,
-      targetRepo,
-      targetFile,
 
       orderKey,
       isAscend,
