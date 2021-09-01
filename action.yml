@@ -8,14 +8,17 @@ inputs:
     description: "repos need to collection contributors"
     required: true
   target:
-    description: "target path to add collected contributors"
+    description: "target repo to add collected contributors"
+    required: true
+  targetFile:
+    description: "target file to add collected contributors"
     required: true
   orderKey:
     description: "contributor is ordered by this key"
     required: false
     default: "login"
   isAscend:
-    description: "ascend or descend "
+    description: "ascend or descend"
     required: false
     default: "True"
   userTypeBlackList:
@@ -36,5 +39,14 @@ inputs:
     default: ""
 
 runs:
-  using: "node12"
-  main: "dist/index.js"
+  using: "composite"
+  steps: 
+    - name: check out code
+      uses: actions/checkout@v2
+      with: 
+        token: ${{ inputs.token }}
+        repository: ${{ inputs.target }}
+    - name: update file if necessary
+      using: 'node12'
+      main: dist/index.js'
+    -

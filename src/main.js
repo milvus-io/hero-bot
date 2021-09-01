@@ -9,7 +9,8 @@ const mainTread = async (option) => {
     const {
       token,
       sourcesRepos,
-      target,
+      targetRepo,
+      targetFile,
 
       orderKey,
       isAscend,
@@ -40,8 +41,7 @@ const mainTread = async (option) => {
     Object.assign(option, {
       contributors,
     });
-    await updateFile(option);
-    core.info(`${contributors.length} contributors added into file ${target}`)
+    updateFile(option);
   } catch (error) {
     core.setFailed(error.message);
   }
