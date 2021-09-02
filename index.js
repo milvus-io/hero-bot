@@ -6,7 +6,7 @@ async function run() {
     // required inputs
     token: core.getInput('token', { required: true }),
     sourcesRepos: core.getInput('repos', { required: true }).split(';'),
-    target: core.getInput('target', { required: true }),
+    targetFile: core.getInput('targetFile', { required: true }),
 
     // optional inputs
     orderKey: core.getInput('orderKey'),
@@ -19,4 +19,3 @@ async function run() {
   mainTread(option);
 }
 run();
-
