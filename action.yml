@@ -64,7 +64,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.token }}
+    - ${{ inputs.repos }}
     # - ${{ inputs.repos }}
     # - ${{ inputs.targetRepo }}
     # - ${{ inputs.targetReponame }}
