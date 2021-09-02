@@ -64,17 +64,17 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.token }}
-    - ${{ inputs.repos }}
-    - ${{ inputs.targetRepo }}
-    - ${{ inputs.targetReponame }}
-    - ${{ inputs.targetFile }}
-    - ${{ inputs.orderKey }}
-    - ${{ inputs.isAscend }}
-    - ${{ inputs.userTypeBlackList }}
-    - ${{ inputs.width }}
-    - ${{ inputs.showTotal }}
-    - ${{ inputs.customUserConfig }}
+    - token: ${{ inputs.token }}
+    - repos: ${{ inputs.repos }}
+    - targetRepo: ${{ inputs.targetRepo }}
+    - targetReponame: ${{ inputs.targetReponame }}
+    - targetFile: ${{ inputs.targetFile }}
+    - orderKey: ${{ inputs.orderKey }}
+    - isAscend: ${{ inputs.isAscend }}
+    - userTypeBlackList: ${{ inputs.userTypeBlackList }}
+    - width: ${{ inputs.width }}
+    - showTotal: ${{ inputs.showTotal }}
+    - customUserConfig: ${{ inputs.customUserConfig }}
     
     
 
