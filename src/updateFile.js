@@ -8,6 +8,7 @@ const updateFile = ({ contributors, width, showTotal, targetFile, workingDir
 }) => {
   try {
     core.info(`start to update ${targetFile}`);
+    core.info(workingDir);
     let content = fs.readFileSync(`${workingDir}/${targetFile}`, { encoding: "utf8" });
     let newContent = `${startPlaceHolder}\n`;
 
