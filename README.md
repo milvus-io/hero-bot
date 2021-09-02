@@ -3,6 +3,10 @@ Extract heros (contributor) from given repos and add hero avator icon in your ma
 
 If you encounter dco issue while commit files. Check this [branch](https://github.com/milvus-io/hero-bot/tree/dco-enabled) for solution 
 
+## Usage
+
+Here is a [example](https://github.com/milvus-io/hero-bot/blob/main/.github/workflows/all_contributor.yml) yml for reference
+
 ### Required inputs
 
 | key | description | example value |
