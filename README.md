@@ -27,8 +27,9 @@ If you encounter dco issue while commit files. Check this [branch](https://githu
 Contributors add to end of file in default.
 
 To customize position, add 
-```<br><!-- Do not remove start of hero-bot --><br>
-<br><!-- Do not remove end of hero-bot --><br>``` 
+
+![image](https://user-images.githubusercontent.com/83750738/131831447-4fc44433-cc4f-4ab9-9fd3-4780af87b736.png)
+
 anywhere you want. And contributors will be insert inside of if.
 
 ## Reference
