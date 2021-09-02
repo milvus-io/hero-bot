@@ -32,7 +32,7 @@ Contributors add to end of file in default.
 
 To customize position, add 
 
-https://github.com/milvus-io/hero-bot/blob/main/sample.svg
+![image](https://github.com/milvus-io/hero-bot/blob/main/sample.svg)
 
 anywhere you want. And contributors will be insert inside of if.
 
