@@ -1,5 +1,7 @@
 # hero-bot
-extract heros (contributor) from given repos and add hero avator icon in your markdown
+Extract heros (contributor) from given repos and add hero avator icon in your markdown
+
+If you encounter dco issue while commit files. Check this [branch](https://github.com/milvus-io/hero-bot/tree/dco-enabled) for solution 
 
 ### Required inputs
 
