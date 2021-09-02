@@ -7,12 +7,12 @@ inputs:
   repos:
     description: "repos need to collection contributors"
     required: true
-  targetRepo:
-    description: "target repo to add collected contributors"
-    required: true
-  targetReponame: 
-    description: "target repo name to add collected contributors"
-    required: true
+  # targetRepo:
+  #   description: "target repo to add collected contributors"
+  #   required: true
+  # targetReponame: 
+  #   description: "target repo name to add collected contributors"
+  #   required: true
   targetFile:
     description: "target file to add collected contributors"
     required: true
@@ -60,11 +60,11 @@ inputs:
 #           git push
 #         fi
 
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.repos }}
+# runs:
+#   using: 'docker'
+#   image: 'Dockerfile'
+#   env:
+#     - ${{ inputs.repos }}
     # - ${{ inputs.repos }}
     # - ${{ inputs.targetRepo }}
     # - ${{ inputs.targetReponame }}
@@ -76,7 +76,8 @@ runs:
     # - ${{ inputs.showTotal }}
     # - ${{ inputs.customUserConfig }}
     
-    
-
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
 
         
