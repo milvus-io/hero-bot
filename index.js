@@ -15,6 +15,7 @@ async function run() {
     width: core.getInput('width'),
     showTotal: core.getBooleanInput('showTotal'),
     customUserConfig: core.getInput('customUserConfig'),
+    workingDir: core.getInput('workingDir'),
   }
   mainTread(option);
 }

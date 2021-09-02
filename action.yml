@@ -40,6 +40,11 @@ inputs:
     description: "a json config file for adding custom user list"
     required: false
     default: ""
+  workingDir: 
+    description: "a json config file for adding custom user list"
+    required: false
+    default: ${{ github.workspace }}/${{ github.event.repository.name }}
+    
 
 # runs:
 #   using: "composite"
