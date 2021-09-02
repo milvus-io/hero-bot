@@ -65,16 +65,16 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.token }}
-    - ${{ inputs.repos }}
-    - ${{ inputs.targetRepo }}
-    - ${{ inputs.targetReponame }}
-    - ${{ inputs.targetFile }}
-    - ${{ inputs.orderKey }}
-    - ${{ inputs.isAscend }}
-    - ${{ inputs.userTypeBlackList }}
-    - ${{ inputs.width }}
-    - ${{ inputs.showTotal }}
-    - ${{ inputs.customUserConfig }}
+    # - ${{ inputs.repos }}
+    # - ${{ inputs.targetRepo }}
+    # - ${{ inputs.targetReponame }}
+    # - ${{ inputs.targetFile }}
+    # - ${{ inputs.orderKey }}
+    # - ${{ inputs.isAscend }}
+    # - ${{ inputs.userTypeBlackList }}
+    # - ${{ inputs.width }}
+    # - ${{ inputs.showTotal }}
+    # - ${{ inputs.customUserConfig }}
     
     
 
