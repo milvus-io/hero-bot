@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const fs = require('fs');
+const path = require("path");
 
 const startPlaceHolder = '<!-- Do not remove start of hero-bot -->';
 const endPlaceHolder = '<!-- Do not remove end of hero-bot -->';
@@ -8,7 +9,7 @@ const updateFile = ({ contributors, width, showTotal, targetFile,
 }) => {
   try {
     core.info(`start to update ${targetFile}`);
-    let content = fs.readFileSync(targetFile, { encoding: "utf8" });
+    let content = fs.readFileSync(path.resolve(__dirname, targetFile), { encoding: "utf8" });
     let newContent = `${startPlaceHolder}\n`;
 
     if (showTotal) {
@@ -37,7 +38,7 @@ const updateFile = ({ contributors, width, showTotal, targetFile,
       core.info("contributors not changed, won't update file");
       core.exportVariable('updated', false);
     }
-    fs.writeFileSync(targetFile, content);
+    fs.writeFileSync(path.resolve(__dirname, targetFile), content);
     core.info(`file write successfully`);
   } catch (err) {
     throw err;
