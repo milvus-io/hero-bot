@@ -12,14 +12,15 @@ const updateFile = ({ contributors, width, showTotal, targetFile, workingDir
     let content = fs.readFileSync(`${workingDir}/${targetFile}`, { encoding: "utf8" });
     let newContent = `${startPlaceHolder}\n`;
 
+    let contributerIcons = contributors.map(element => {
+      return `<a href="${element.html_url}"><img src="${element.avatar_url}" width="${width}" /></a>\n`
+    });
+
     if (showTotal) {
       core.info(`total badge will be shown`);
       newContent = `${newContent}<img src="https://img.shields.io/badge/all--contributors-${contributerIcons.length}-orange"><br>\n`;
     }
 
-    let contributerIcons = contributors.map(element => {
-      return `<a href="${element.html_url}"><img src="${element.avatar_url}" width="${width}" /></a>\n`
-    })
     core.info(`${contributerIcons.length} contributors will be added`);
     newContent = `${newContent}${contributerIcons.join('')}${endPlaceHolder}`;
 
@@ -43,7 +44,7 @@ const updateFile = ({ contributors, width, showTotal, targetFile, workingDir
   } catch (err) {
     throw err;
   }
-}
+};
 
 module.exports = {
   updateFile,
