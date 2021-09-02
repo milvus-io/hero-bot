@@ -7,12 +7,6 @@ inputs:
   repos:
     description: "repos need to collection contributors"
     required: true
-  # targetRepo:
-  #   description: "target repo to add collected contributors"
-  #   required: true
-  # targetReponame: 
-  #   description: "target repo name to add collected contributors"
-  #   required: true
   targetFile:
     description: "target file to add collected contributors"
     required: true
@@ -44,44 +38,8 @@ inputs:
     description: "a json config file for adding custom user list"
     required: false
     default: ${{ github.workspace }}/${{ github.event.repository.name }}
-    
 
-# runs:
-#   using: "composite"
-#   steps: 
-#     - name: check out code
-#       uses: actions/checkout@v2
-#       with: 
-#         token: ${{ inputs.token }}
-#         repository: ${{ inputs.target }}
-#     - name: update file if necessary
-#       using: 'node12'
-#       main: dist/index.js'
-#     - name: commit 
-#       run: |
-#         if git diff --exit-code; then
-#           git add -u
-#           git commit -s -m 'update contributors'
-#           git push
-#         fi
-
-# runs:
-#   using: 'docker'
-#   image: 'Dockerfile'
-#   env:
-#     - ${{ inputs.repos }}
-    # - ${{ inputs.repos }}
-    # - ${{ inputs.targetRepo }}
-    # - ${{ inputs.targetReponame }}
-    # - ${{ inputs.targetFile }}
-    # - ${{ inputs.orderKey }}
-    # - ${{ inputs.isAscend }}
-    # - ${{ inputs.userTypeBlackList }}
-    # - ${{ inputs.width }}
-    # - ${{ inputs.showTotal }}
-    # - ${{ inputs.customUserConfig }}
-    
-runs:
+    runs:
   using: 'node12'
   main: 'dist/index.js'
 

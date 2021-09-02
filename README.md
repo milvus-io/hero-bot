@@ -1,17 +1,14 @@
 # hero-bot
 extract heros (contributor) from given repos and add hero avator icon in your markdown
 
-## Usage
-
-Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/workflows/all-contributors.yaml) yml for using hero-bot 
-
+## This branch only for dco usage, detail config refer to [here](https://github.com/milvus-io/milvus/blob/master/.github/workflows/all-contributors.yaml)
 ### Required inputs
 
 | key | description | example value |
 |  ---- | ---- | ---- |
 | token | Personal access tokens with public_repo access ![image](https://user-images.githubusercontent.com/83750738/126748573-1de4a912-bf1a-4c2c-88ff-3032dce70f6a.png)  better stored in secret | `ghp_xxxx` |
 | repos  | repos need to collection contributor, `/`to divide org and repo, `,` to seperate different repos in same org, `;` to seperate different orgs | `milvus-io/milvus,milvus.io;facebook/react,ax` |
-| target  | target path to add collection contributor | `milvus-io/milvus/README.md` |
+| targetFile  | target file to add collection contributor | `README.md` |
 
 ### Optional inputs
 
@@ -29,11 +26,11 @@ Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/wor
 Contributors add to end of file in default.
 
 To customize position, add 
-```<br><!-- Do not remove start of hero-bot --><br><br><!-- Do not remove end of hero-bot --><br>``` 
+```<!-- Do not remove start of hero-bot --><!-- Do not remove end of hero-bot -->``` 
 anywhere you want. And contributors will be insert inside of if.
 
 ## Reference
 
 Use [@actions/github](https://github.com/actions/toolkit/tree/main/packages/github) to fetch contributor from repo and files.  
-Use [@octokit/plugin-create-or-update-text-file](https://github.com/octokit/plugin-create-or-update-text-file.js) to update file.   
+Use [@octokit/plugin-create-or-update-text-file](https://github.com/octokit/
 Use https://shields.io to generate badge. 
