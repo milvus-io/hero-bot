@@ -9,7 +9,7 @@ jobs:
       - uses: milvus-io/hero-bot@main
         with:
           token: ${{ secrets.MYTOKEN }}
-          repos: 'milvus-io/milvus,'
+          repos: 'milvus-io/milvus'
           target: 'milvus-io/hero-bot/README.md'
           isAscend: False
           width: '50px'
