@@ -6,8 +6,7 @@ jobs:
   contributor:
     runs-on: ubuntu-latest
     steps:
-      - uses: milvus-io/hero-bot@1.11
-        if: 1 == 2
+      - uses: milvus-io/hero-bot@latest
         with:
           token: ${{ secrets.MYTOKEN }}
           repos: 'milvus-io/milvus,'
