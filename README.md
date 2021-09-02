@@ -1,10 +1,6 @@
 # hero-bot
 extract heros (contributor) from given repos and add hero avator icon in your markdown
 
-## Usage
-
-Here is an [example](https://github.com/milvus-io/milvus/blob/master/.github/workflows/all-contributors.yaml) yml for using hero-bot 
-
 ### Required inputs
 
 | key | description | example value |
