@@ -41,6 +41,9 @@ anywhere you want. And contributors will be insert inside of if.
 Use [@actions/github](https://github.com/actions/toolkit/tree/main/packages/github) to fetch contributor from repo and files.  
 Use [@octokit/plugin-create-or-update-text-file](https://github.com/octokit/plugin-create-or-update-text-file.js) to update file.   
 Use https://shields.io to generate badge. 
+
+
+## Sample result from milvus repo
 <br><!-- Do not remove start of hero-bot --><br>
 <img src="https://img.shields.io/badge/all--contributors-123-orange"><br>
 <a href="https://github.com/zxf2017"><img src="https://avatars.githubusercontent.com/u/29620478?v=4" width="50px" /></a>
