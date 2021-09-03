@@ -39,7 +39,7 @@ inputs:
     required: false
     default: ${{ github.workspace }}/${{ github.event.repository.name }}
 
-    runs:
+runs:
   using: 'node12'
   main: 'dist/index.js'
 
