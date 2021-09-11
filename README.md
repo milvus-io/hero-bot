@@ -45,7 +45,7 @@ Use https://shields.io to generate badge.
 
 ## Sample result from milvus repo
 <br><!-- Do not remove start of hero-bot --><br>
-<img src="https://img.shields.io/badge/all--contributors-127-orange"><br>
+<img src="https://img.shields.io/badge/all--contributors-130-orange"><br>
 <a href="https://github.com/zxf2017"><img src="https://avatars.githubusercontent.com/u/29620478?v=4" width="50px" /></a>
 <a href="https://github.com/zwd1208"><img src="https://avatars.githubusercontent.com/u/15153901?v=4" width="50px" /></a>
 <a href="https://github.com/zhuwenxing"><img src="https://avatars.githubusercontent.com/u/12268675?v=4" width="50px" /></a>
@@ -76,6 +76,7 @@ Use https://shields.io to generate badge.
 <a href="https://github.com/sre-ci-robot"><img src="https://avatars.githubusercontent.com/u/56469371?v=4" width="50px" /></a>
 <a href="https://github.com/snyk-bot"><img src="https://avatars.githubusercontent.com/u/19733683?v=4" width="50px" /></a>
 <a href="https://github.com/siriusctrl"><img src="https://avatars.githubusercontent.com/u/26541600?v=4" width="50px" /></a>
+<a href="https://github.com/sileht"><img src="https://avatars.githubusercontent.com/u/200878?v=4" width="50px" /></a>
 <a href="https://github.com/shiyu22"><img src="https://avatars.githubusercontent.com/u/53459423?v=4" width="50px" /></a>
 <a href="https://github.com/shiyu09"><img src="https://avatars.githubusercontent.com/u/39143280?v=4" width="50px" /></a>
 <a href="https://github.com/shengjun1985"><img src="https://avatars.githubusercontent.com/u/49774184?v=4" width="50px" /></a>
@@ -98,8 +99,10 @@ Use https://shields.io to generate badge.
 <a href="https://github.com/lhotari"><img src="https://avatars.githubusercontent.com/u/66864?v=4" width="50px" /></a>
 <a href="https://github.com/lee-eve"><img src="https://avatars.githubusercontent.com/u/9720105?v=4" width="50px" /></a>
 <a href="https://github.com/jkx8fc"><img src="https://avatars.githubusercontent.com/u/31717785?v=4" width="50px" /></a>
+<a href="https://github.com/jingkl"><img src="https://avatars.githubusercontent.com/u/34296482?v=4" width="50px" /></a>
 <a href="https://github.com/jielinxu"><img src="https://avatars.githubusercontent.com/u/52057195?v=4" width="50px" /></a>
 <a href="https://github.com/jeffoverflow"><img src="https://avatars.githubusercontent.com/u/24581746?v=4" width="50px" /></a>
+<a href="https://github.com/jaelgu"><img src="https://avatars.githubusercontent.com/u/86251631?v=4" width="50px" /></a>
 <a href="https://github.com/jackyu2020"><img src="https://avatars.githubusercontent.com/u/64533877?v=4" width="50px" /></a>
 <a href="https://github.com/guoxiangzhou"><img src="https://avatars.githubusercontent.com/u/52496626?v=4" width="50px" /></a>
 <a href="https://github.com/gujun720"><img src="https://avatars.githubusercontent.com/u/53246671?v=4" width="50px" /></a>
