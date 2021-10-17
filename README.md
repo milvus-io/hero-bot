@@ -45,7 +45,7 @@ Use https://shields.io to generate badge.
 
 ## Sample result from milvus repo
 <br><!-- Do not remove start of hero-bot --><br>
-<img src="https://img.shields.io/badge/all--contributors-138-orange"><br>
+<img src="https://img.shields.io/badge/all--contributors-139-orange"><br>
 <a href="https://github.com/zxf2017"><img src="https://avatars.githubusercontent.com/u/29620478?v=4" width="50px" /></a>
 <a href="https://github.com/zwd1208"><img src="https://avatars.githubusercontent.com/u/15153901?v=4" width="50px" /></a>
 <a href="https://github.com/zhuwenxing"><img src="https://avatars.githubusercontent.com/u/12268675?v=4" width="50px" /></a>
@@ -63,6 +63,7 @@ Use https://shields.io to generate badge.
 <a href="https://github.com/xiaofan-luan"><img src="https://avatars.githubusercontent.com/u/83447078?v=4" width="50px" /></a>
 <a href="https://github.com/xiaocai2333"><img src="https://avatars.githubusercontent.com/u/46207236?v=4" width="50px" /></a>
 <a href="https://github.com/xaxys"><img src="https://avatars.githubusercontent.com/u/28949072?v=4" width="50px" /></a>
+<a href="https://github.com/wxywb"><img src="https://avatars.githubusercontent.com/u/5432721?v=4" width="50px" /></a>
 <a href="https://github.com/wscxyey"><img src="https://avatars.githubusercontent.com/u/48882296?v=4" width="50px" /></a>
 <a href="https://github.com/weishuo2"><img src="https://avatars.githubusercontent.com/u/27938020?v=4" width="50px" /></a>
 <a href="https://github.com/water32"><img src="https://avatars.githubusercontent.com/u/13234561?v=4" width="50px" /></a>
